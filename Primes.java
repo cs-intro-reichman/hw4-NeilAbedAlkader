@@ -35,8 +35,8 @@ public class Primes {
             System.out.println(prime);
         }
 
-        // Calculate percentage of primes
-        int totalNumbers = n - 1; // Total numbers in range [2, n]
+        // Correctly calculate total numbers in range [2, n]
+        int totalNumbers = n - 1; // Total numbers between 2 and n (inclusive)
         double percentage = (count / (double) totalNumbers) * 100;
 
         // Print count and percentage
