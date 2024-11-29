@@ -1,6 +1,6 @@
 public class Primes {
     public static void main(String[] args) {
-        int n = 7;
+        int n = Integer.parseInt(args[0]);
         boolean[] isPrime = new boolean[n + 1];
         int[] arr1 = new int[n];
         int result = 0;
@@ -27,6 +27,7 @@ public class Primes {
         }
         System.out.println("Prime numbers up to " + result + ":");
         for (int i = 2; i < arr1.length; i++) {
+            if(arr1[i]!=0)
             System.out.println(arr1[i]);
         }
         System.out.println("There are "+ count +" Prime numbers between 2 and " + result + ":");
