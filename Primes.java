@@ -1,6 +1,6 @@
 public class Primes {
     public static void main(String[] args) {
-        int n = 7;
+        int n = 7; // Change this value to test different ranges
         printPrimesUpTo(n);
     }
 
@@ -13,7 +13,7 @@ public class Primes {
                 count++;
             }
         }
-        int totalNumbers = n - 1;
+        int totalNumbers = n - 1; // Total numbers in the range [2, n]
         double percentage = (count / (double) totalNumbers) * 100;
         System.out.printf("There are %d primes between 2 and %d (%.0f%% are primes)%n", count, n, percentage);
     }
