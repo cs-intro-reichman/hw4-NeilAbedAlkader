@@ -99,8 +99,6 @@ public class ArrCharOps {
         return lastIndex;
     }
 
-    /* Returns an array which is the concatanation of the two given arrays.
-     */
     public static char[] concat(char[] arr1, char[] arr2) {
         char [] arrUnite = new char [arr1.length+arr2.length];
         for (int i = 0; i < arr1.length; i++) {
