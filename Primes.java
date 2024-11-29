@@ -1,15 +1,18 @@
+import java.util.ArrayList;
+
 public class Primes {
     public static void main(String[] args) {
         int n = Integer.parseInt(args[0]);
         boolean[] isPrime = new boolean[n + 1];
-        int[] arr1 = new int[n];
-        int result = 0;
+        ArrayList<Integer> primes = new ArrayList<>();
         int count = 0;
 
+        // Initialize isPrime array
         for (int i = 2; i <= n; i++) {
             isPrime[i] = true;
         }
 
+        // Sieve of Eratosthenes to mark non-prime numbers
         for (int i = 2; i * i <= n; i++) {
             if (isPrime[i]) {
                 for (int j = i * i; j <= n; j += i) {
@@ -17,19 +20,22 @@ public class Primes {
                 }
             }
         }
+
+        // Collect primes and count them
         for (int i = 2; i <= n; i++) {
             if (isPrime[i]) {
-                arr1[i-2]=i;
-                result = i;
-                count += 1;
+                primes.add(i);
+                count++;
             }
         }
-        System.out.println("Prime numbers up to " + result + ":");
-        for (int i = 2; i < arr1.length; i++) {
-            if(arr1[i]!=0)
-            System.out.println(arr1[i]);
+
+        // Print prime numbers
+        System.out.println("Prime numbers up to " + n + ":");
+        for (int prime : primes) {
+            System.out.println(prime);
         }
-        System.out.println("There are "+ count +" Prime numbers between 2 and " + result + ":");
+
+        // Print count of primes
+        System.out.println("There are " + count + " primes between 2 and " + n + ":");
     }
 }
-
