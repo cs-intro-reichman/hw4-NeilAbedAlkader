@@ -92,7 +92,11 @@ public class ArrCharOps {
     }
 
     public static int compareTo(String str1, String str2) {
+        if (str1 == null || str2 == null) {
+            return -2;
+        }
         int minLength = Math.min(str1.length(), str2.length());
+
         for (int i = 0; i < minLength; i++) {
             if (str1.charAt(i) != str2.charAt(i)) {
                 return str1.charAt(i) - str2.charAt(i);
