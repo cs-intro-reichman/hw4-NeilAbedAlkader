@@ -30,7 +30,7 @@ public class Primes {
         }
 
         // Print prime numbers
-        System.out.println("Prime numbers up to " + n + ":");
+        System.out.println("Prime numbers up to " + n );
         for (int prime : primes) {
             System.out.println(prime);
         }
