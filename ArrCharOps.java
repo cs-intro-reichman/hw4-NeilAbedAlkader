@@ -19,7 +19,7 @@ public class ArrCharOps {
         System.out.println(compareTo("Abcd", "a"));
         System.out.println(compareTo("apple", "banana"));
         System.out.println(compareTo("apple", "applepie"));
-        System.out.println(compareTo("Zoo", "zoo"));
+     //   System.out.println(compareTo("Zoo", "zoo"));
         System.out.println(hashCode(arr1));
         System.out.println(hashCode(arr2));
     }
@@ -93,11 +93,8 @@ public class ArrCharOps {
 
     public static int compareTo(String str1, String str2) {
         if (str1 == null || str2 == null) {
-            return -2; // Error code for invalid input
+            return -2;
         }
-
-        str1 = str1.toLowerCase();
-        str2 = str2.toLowerCase();
 
         int minLength = Math.min(str1.length(), str2.length());
 
