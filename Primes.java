@@ -36,6 +36,6 @@ public class Primes {
         }
 
         // Print count of primes
-        System.out.println("There are " + count + " primes between 2 and " + n + ":");
+        System.out.println("There are " + count + " primes between 2 and " + n );
     }
 }

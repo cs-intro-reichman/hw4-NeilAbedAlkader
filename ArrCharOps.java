@@ -18,8 +18,8 @@ public class ArrCharOps {
         System.out.println(compareTo("abw", "abcd"));
         System.out.println(compareTo("Abcd", "a"));
         System.out.println(compareTo("apple", "banana"));
-       // System.out.println(compareTo("apple", "applepie"));
-       System.out.println(compareTo("Zoo", "zoo"));
+        System.out.println(compareTo("apple", "applepie"));
+        System.out.println(compareTo("Zoo", "zoo"));
         System.out.println(hashCode(arr1));
         System.out.println(hashCode(arr2));
     }
