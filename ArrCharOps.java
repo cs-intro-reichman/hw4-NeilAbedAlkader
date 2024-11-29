@@ -93,8 +93,11 @@ public class ArrCharOps {
 
     public static int compareTo(String str1, String str2) {
         if (str1 == null || str2 == null) {
-            return -2;
+            return -2; // Error code for invalid input
         }
+
+        str1 = str1.toLowerCase();
+        str2 = str2.toLowerCase();
 
         int minLength = Math.min(str1.length(), str2.length());
 
