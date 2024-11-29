@@ -24,7 +24,7 @@ public class Primes {
                 count += 1;
             }
         }
-        System.out.println("There are+"+ count +"Prime numbers between 2 and " + result + ":");
+        System.out.println("There are "+ count +" Prime numbers between 2 and " + result + ":");
     }
 }
 
