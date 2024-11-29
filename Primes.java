@@ -1,29 +1,35 @@
 public class Primes {
     public static void main(String[] args) {
-        int n = 7; // Change this value to test different ranges
-        printPrimesUpTo(n);
-    }
-
-    public static void printPrimesUpTo(int n) {
+        int n = 7;
+        boolean[] isPrime = new boolean[n + 1];
+        int[] arr1 = new int[n];
+        int result = 0;
         int count = 0;
-        System.out.println("Prime numbers up to " + n + ":");
+
         for (int i = 2; i <= n; i++) {
-            if (isPrime(i)) {
-                System.out.println(i);
-                count++;
+            isPrime[i] = true;
+        }
+
+        for (int i = 2; i * i <= n; i++) {
+            if (isPrime[i]) {
+                for (int j = i * i; j <= n; j += i) {
+                    isPrime[j] = false;
+                }
             }
         }
-        int totalNumbers = n - 1; // Total numbers in the range [2, n]
-        double percentage = (count / (double) totalNumbers) * 100;
-        System.out.printf("There are %d primes between 2 and %d (%.0f%% are primes)%n", count, n, percentage);
-    }
-
-    public static boolean isPrime(int num) {
-        if (num < 2) return false;
-        for (int i = 2; i * i <= num; i++) {
-            if (num % i == 0) return false;
+        System.out.println("Prime numbers up to " + n + ":");
+        for (int i = 2; i <= n; i++) {
+            if (isPrime[i]) {
+                arr1[i-2]=i;
+                result = i;
+                count += 1;
+            }
         }
-        return true;
+        System.out.println("Prime numbers up to " + result + ":");
+        for (int i = 2; i < arr1.length; i++) {
+            System.out.println(arr1[i]);
+        }
+        System.out.println("There are "+ count +" Prime numbers between 2 and " + result + ":");
     }
 }
 
