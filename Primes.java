@@ -1,30 +1,29 @@
 public class Primes {
     public static void main(String[] args) {
-        int n = Integer.parseInt(args[0]);
-        boolean[] isPrime = new boolean[n + 1];
-        int result = 0;
+        int n = 7;
+        printPrimesUpTo(n);
+    }
+
+    public static void printPrimesUpTo(int n) {
         int count = 0;
-
-        for (int i = 2; i <= n; i++) {
-            isPrime[i] = true;
-        }
-
-        for (int i = 2; i * i <= n; i++) {
-            if (isPrime[i]) {
-                for (int j = i * i; j <= n; j += i) {
-                    isPrime[j] = false;
-                }
-            }
-        }
         System.out.println("Prime numbers up to " + n + ":");
         for (int i = 2; i <= n; i++) {
-            if (isPrime[i]) {
+            if (isPrime(i)) {
                 System.out.println(i);
-                result = i;
-                count += 1;
+                count++;
             }
         }
-        System.out.println("There are "+ count +" Prime numbers between 2 and " + result + ":");
+        int totalNumbers = n - 1;
+        double percentage = (count / (double) totalNumbers) * 100;
+        System.out.printf("There are %d primes between 2 and %d (%.0f%% are primes)%n", count, n, percentage);
+    }
+
+    public static boolean isPrime(int num) {
+        if (num < 2) return false;
+        for (int i = 2; i * i <= num; i++) {
+            if (num % i == 0) return false;
+        }
+        return true;
     }
 }
 
