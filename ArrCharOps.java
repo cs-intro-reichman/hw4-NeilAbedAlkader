@@ -14,7 +14,7 @@ public class ArrCharOps {
         System.out.println(concat(arr1, arr2));
         System.out.println(subArray(arr2, 2, 9));
         System.out.println(compareTo("abcd", "abcd"));
-        System.out.println(compareTo("abc", "abcd"));
+        System.out.println(compareTo("abc", "abc"));
         System.out.println(compareTo("abw", "abcd"));
         System.out.println(compareTo("Abcd", "a"));
         System.out.println(compareTo("apple", "banana"));
