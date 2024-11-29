@@ -3,6 +3,7 @@ public class Primes {
         int n = Integer.parseInt(args[0]);
         boolean[] isPrime = new boolean[n + 1];
         int result = 0;
+        int count = 0;
 
         for (int i = 2; i <= n; i++) {
             isPrime[i] = true;
@@ -20,9 +21,10 @@ public class Primes {
             if (isPrime[i]) {
                 System.out.println(i);
                 result = i;
+                count += 1;
             }
         }
-        System.out.println("Prime numbers between 2 and " + result + ":");
+        System.out.println("There are+"+ count +"Prime numbers between 2 and " + result + ":");
     }
 }
 
