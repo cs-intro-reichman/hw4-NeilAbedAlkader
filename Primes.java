@@ -9,10 +9,10 @@ public class Primes {
                 System.out.println(i);
                 count ++;
             } else {
-                int div = i -1;
-                while (i % div != 0) {
-                    div --;
-                    if (div == 1) {
+                int num = i -1;
+                while (i % num != 0) {
+                    num --;
+                    if (num == 1) {
                         count ++;
                         System.out.println(i);
                         break;
