@@ -55,8 +55,8 @@ public class ArrCharOps {
      */
     public static char charAt(char[] arr, int index) {
         String str = new String (arr);
-        char c = str.charAt(index);
-        return c;
+        char ch1 = str.charAt(index);
+        return ch1;
     }
 
     /** If the two arrays have the same value in every index,
@@ -100,10 +100,10 @@ public class ArrCharOps {
      */
     public static int lastIndexOf(char[] arr, char ch) {
         // Replace the following statement with your code
-        int n = arr.length;
-        char [] arrRev = new char[n];
-        for (int i = 0; i < n; i++){
-            arrRev [i] = arr [n - i - 1];
+        int num = arr.length;
+        char [] arrRev = new char[num];
+        for (int i = 0; i < num; i++){
+            arrRev [i] = arr [num - i - 1];
         }
         String rev = new String(arrRev);
         if (rev.indexOf(ch) == -1) {
@@ -116,14 +116,14 @@ public class ArrCharOps {
      */
     public static char[] concat(char[] arr1, char[] arr2) {
         // Replace the following statement with your code
-        int n = arr1.length;
+        int num = arr1.length;
         int m = arr2.length;
-        char [] con = new char[n + m];
-        for (int i = 0; i < n; i++){
+        char [] con = new char[num + m];
+        for (int i = 0; i < num; i++){
             con [i] = arr1 [i];
         }
         for (int i = 0; i < m; i++){
-            con [n+i] = arr2 [i];
+            con [num+i] = arr2 [i];
         }
         return con;
     }
@@ -143,8 +143,8 @@ public class ArrCharOps {
     /** Returns a single integer that represents the given array. This integer is sometimes
      *  referred to as the array's "hash code". Later in the course we'll explain what these
      *  hash codes are used for. For now, simply implement the specification given below.
-     *  The hash code is computed as: arr[0]*7^(n-1) + arr[1]*7^(n-2) + ... + arr[n-2]*7 + arr[n-1]
-     *  where arr[i] is the i'th character of the array, and n is the array's length.
+     *  The hash code is computed as: arr[0]*7^(num-1) + arr[1]*7^(num-2) + ... + arr[num-2]*7 + arr[num-1]
+     *  where arr[i] is the i'th character of the array, and num is the array's length.
      *  The hash value of an empty array is zero.
      */
     public static long hashCode(char[] arr) {
@@ -152,10 +152,10 @@ public class ArrCharOps {
         if (arr == null) {
             return 0;
         }
-        double n = arr.length;
+        double num = arr.length;
         long sum = 0;
-        for (int i = 0; i < n; i++){
-            sum += arr [i] * Math.pow(7 , n - 1 - i);
+        for (int i = 0; i < num; i++){
+            sum += arr [i] * Math.pow(7 , num - 1 - i);
 
         }
         return sum;
@@ -196,19 +196,21 @@ public class ArrCharOps {
 
         char [] arr1 = str1.toCharArray();
         char [] arr2 = str2.toCharArray();
-        int n = arr1.length;
+        int num = arr1.length;
         int m = arr2.length;
-        int minLength = Math.min(n, m);
+        int minLength = Math.min(num, m);
         for (int i = 0; i < minLength; i++){
             if (charAt(arr1, i) != charAt(arr2, i)){
                 return charAt(arr1, i) < charAt(arr2, i) ? -1 : 1;
             }
         }
-        if (n < m) {
+        if (num < m) 
             return -1;
-        }
-        else {
+        
+        else 
             return 1;
-        }
+        
+        
     }
+    
 }
